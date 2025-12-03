@@ -1,0 +1,13 @@
+1) Qual cabeçalho HTTP de resposta o middleware cors adicionou na Etapa B para que o navegador 
+permitisse a requisição?
+R: o cabeçalho origin fez uma requisição de permissão para o URL do cliente (que no caso seria o localhost 3000), 
+que fez com que o servidor respondesse com o cabeçalho Access-Control-Allow-Origin, que permite o acesso da URL do 
+cliente por conta da política de mesma origem
+
+2) Se você mudasse o backend para a porta 8081 sem mudar o frontend, o CORS ainda bloquearia? Por quê?
+R: Não, o cors não bloquearia por conta do cabeçalho origin, que ainda faz a requisição de permissão, 
+mas ele ainda assim daria erro, pois você estaria fazendo uma requisição para a porta 8081, que não existe,
+sendo que a porta correta seria a 8080
+
+3) O que aconteceria se você usasse origin: '*' no corsOptions?
+R: O servidor permitiria qualquer URl de qualquer origem acessar o site
